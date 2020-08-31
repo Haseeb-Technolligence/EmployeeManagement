@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import MiniDrawer from './components/drawer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MiniDrawer />
   </React.StrictMode>,
   document.getElementById('root')
 );
