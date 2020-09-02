@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import TotalEmp from './totalEmployees';
 import Graph from './graph';
+import AlignItemsList from './activitylist';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,6 +28,7 @@ export default function AutoGrid() {
             <h1>Dashboard</h1>
             <hr/>
           </Paper>
+          <br />
         </Grid>
       </Grid>
       <Grid container spacing={3}>
@@ -44,9 +46,13 @@ export default function AutoGrid() {
         <Paper className={classes.paper}>
             <TotalEmp />
           </Paper>
+
         </Grid>
+        <br />
       </Grid>
+      <br/>
       <Grid container spacing={12}>
+        <br/>
         <Grid item xs>
           <Paper className={classes.paper}>
             <Graph />
@@ -55,6 +61,8 @@ export default function AutoGrid() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <h1>Activity Log</h1>
+            <hr/>
+            <AlignItemsList />
           </Paper>
         </Grid>
       </Grid>
