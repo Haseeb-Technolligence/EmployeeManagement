@@ -27,6 +27,7 @@ export default function AutoGrid() {
             <h1>Dashboard</h1>
             <hr/>
           </Paper>
+          <br />
         </Grid>
       </Grid>
       <Grid container spacing={3}>
@@ -44,9 +45,13 @@ export default function AutoGrid() {
         <Paper className={classes.paper}>
             <TotalEmp />
           </Paper>
+
         </Grid>
+        <br />
       </Grid>
+      <br/>
       <Grid container spacing={12}>
+        <br/>
         <Grid item xs>
           <Paper className={classes.paper}>
             <Graph />

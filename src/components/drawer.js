@@ -25,7 +25,6 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import AirplanemodeActiveIcon from "@material-ui/icons/AirplanemodeActive";
 import SpeakerNotesIcon from "@material-ui/icons/SpeakerNotes";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Avatar from "@material-ui/core/Avatar";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import ApartmentIcon from "@material-ui/icons/Apartment";
@@ -37,6 +36,12 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import AutoGrid from "./dashboard";
 import XYZ from "./xyz";
+import {
+  Avatar,
+  Box,
+  Button,
+  Hidden,
+} from '@material-ui/core';
 
 const drawerWidth = 240;
 
@@ -223,23 +228,31 @@ export default function MiniDrawer() {
             )}
           </IconButton>
         </div>
-        <div className={classes.dpdiv} style={{ backgroundColor: "green" }}>
-          <List>
-            <ListItem>
-              <ListItemIcon>
-                <Avatar
-                  alt="Remy Sharp"
-                  src={require("../images/dp.jpeg")}
-                  className={classes.dplarge}
-                />
-              </ListItemIcon>
-              <ListItemText primary="Ali Zafar" />
-            </ListItem>
-            <ListItem>
-              <h6>asds</h6>
-            </ListItem>
-          </List>
-        </div>
+        <Box
+        alignItems="center"
+        display="flex"
+        flexDirection="column"
+        p={2}
+      >
+        <Avatar
+          className={classes.avatar}
+          src={require('../images/dp.jpeg')}
+          to="/app/account"
+        />
+        <Typography
+          className={classes.name}
+          color="textPrimary"
+          variant="h5"
+        >
+          Haseeb Shaukat
+        </Typography>
+        <Typography
+          color="textSecondary"
+          variant="body2"
+        >
+          Deputy Direector
+        </Typography>
+      </Box>
         <Divider />
 
         <List>
