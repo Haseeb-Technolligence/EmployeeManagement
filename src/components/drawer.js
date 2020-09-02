@@ -109,7 +109,7 @@ const useStyles = makeStyles((theme) => ({
   },
   navlink: {
     textDecoration: "none",
-    color: "black",
+    color: "gray",
   },
 }));
 
@@ -364,7 +364,7 @@ export default function MiniDrawer() {
             </ListItem>
           </DrawerList>
           {/* logout  */}
-          <NavLink to="/xyz" className={classes.navlink}>
+          <NavLink to="/xyz">
             <ListItem button>
               <ListItemIcon>
                 <ExitToAppIcon color="primary" />
