@@ -1,17 +1,17 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow } = require("electron");
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration: true
-    }
-  })
+      nodeIntegration: true,
+    },
+  });
 
   // and load the index.html of the app.
-  win.loadURL('http://localhost:3001')
+  win.loadURL("http://localhost:3000");
 }
 
-app.whenReady().then(createWindow)
+app.whenReady().then(createWindow);

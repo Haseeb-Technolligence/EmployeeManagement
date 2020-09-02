@@ -33,6 +33,10 @@ import Collapse from "@material-ui/core/Collapse";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import PersonIcon from "@material-ui/icons/Person";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import AutoGrid from "./dashboard";
+import XYZ from "./xyz";
 
 const drawerWidth = 240;
 
@@ -102,6 +106,10 @@ const useStyles = makeStyles((theme) => ({
   dplarge: {
     width: theme.spacing(10),
     height: theme.spacing(10),
+  },
+  navlink: {
+    textDecoration: "none",
+    color: "black",
   },
 }));
 
@@ -236,12 +244,15 @@ export default function MiniDrawer() {
 
         <List>
           {/* dashboard */}
-          <ListItem button type="Dashboard">
-            <ListItemIcon>
-              <DashboardIcon style={{ color: "#fff" }} />
-            </ListItemIcon>
-            <ListItemText primary="Dashboard" />
-          </ListItem>
+          <NavLink to="/dashboard" className={classes.navlink}>
+            <ListItem button type="Dashboard">
+              <ListItemIcon>
+                <DashboardIcon color="primary" />
+              </ListItemIcon>
+              <ListItemText primary="Dashboard" />
+            </ListItem>
+          </NavLink>
+
           {/* employees options */}
 
           <DrawerList
@@ -249,7 +260,7 @@ export default function MiniDrawer() {
             primary="Employee"
             openVariable={employeeOpen}
           >
-            <PersonIcon color="secondary" />
+            <PersonIcon color="primary" />
             <ListItem button className={classes.nested}>
               <ListItemText primary="Add Employee" />
             </ListItem>
@@ -263,7 +274,7 @@ export default function MiniDrawer() {
             primary="Department"
             openVariable={departmentOpen}
           >
-            <ApartmentIcon color="secondary" />
+            <ApartmentIcon color="primary" />
             <ListItem button className={classes.nested}>
               <ListItemText primary="Add Department" />
             </ListItem>
@@ -274,7 +285,7 @@ export default function MiniDrawer() {
           {/* attendance options */}
           <ListItem button onClick={handleAttendance}>
             <ListItemIcon>
-              <MenuBookIcon color="secondary" />
+              <MenuBookIcon color="primary" />
             </ListItemIcon>
             <ListItemText primary="Attendance" />
             {attendanceOpen ? <ExpandLess /> : <ExpandMore />}
@@ -296,7 +307,7 @@ export default function MiniDrawer() {
             primary="Leave"
             openVariable={leaveOpen}
           >
-            <AirlineSeatFlatIcon color="secondary" />
+            <AirlineSeatFlatIcon color="primary" />
             <ListItem button className={classes.nested}>
               <ListItemText primary="Add Leave" />
             </ListItem>
@@ -316,7 +327,7 @@ export default function MiniDrawer() {
             primary="Payroll"
             openVariable={payrollOpen}
           >
-            <LocalAtmIcon color="secondary" />
+            <LocalAtmIcon color="primary" />
             <ListItem button className={classes.nested}>
               <ListItemText primary="Create Payslip" />
             </ListItem>
@@ -330,7 +341,7 @@ export default function MiniDrawer() {
             primary="Holiday"
             openVariable={holidayOpen}
           >
-            <AirplanemodeActiveIcon color="secondary" />
+            <AirplanemodeActiveIcon color="primary" />
             <ListItem button className={classes.nested}>
               <ListItemText primary="Add Holiday" />
             </ListItem>
@@ -344,7 +355,7 @@ export default function MiniDrawer() {
             primary="Settings"
             openVariable={SettingsOpen}
           >
-            <SettingsIcon color="secondary" />
+            <SettingsIcon color="primary" />
             <ListItem button className={classes.nested}>
               <ListItemText primary="Change Password" />
             </ListItem>
@@ -353,45 +364,23 @@ export default function MiniDrawer() {
             </ListItem>
           </DrawerList>
           {/* logout  */}
-          <ListItem button>
-            <ListItemIcon>
-              <ExitToAppIcon color="secondary" />
-            </ListItemIcon>
-            <ListItemText primary="Logout" />
-          </ListItem>
+          <NavLink to="/xyz" className={classes.navlink}>
+            <ListItem button>
+              <ListItemIcon>
+                <ExitToAppIcon color="primary" />
+              </ListItemIcon>
+              <ListItemText primary="Logout" />
+            </ListItem>
+          </NavLink>
         </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
-          dolor purus non enim praesent elementum facilisis leo vel. Risus at
-          ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum
-          quisque non tellus. Convallis convallis tellus id interdum velit
-          laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed
-          adipiscing. Amet nisl suscipit adipiscing bibendum est ultricies
-          integer quis. Cursus euismod quis viverra nibh cras. Metus vulputate
-          eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo
-          quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat
-          vivamus at augue. At augue eget arcu dictum varius duis at consectetur
-          lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien
-          faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
-          ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar
-          elementum integer enim neque volutpat ac tincidunt. Ornare suspendisse
-          sed nisi lacus sed viverra tellus. Purus sit amet volutpat consequat
-          mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis
-          risus sed vulputate odio. Morbi tincidunt ornare massa eget egestas
-          purus viverra accumsan in. In hendrerit gravida rutrum quisque non
-          tellus orci ac. Pellentesque nec nam aliquam sem et tortor. Habitant
-          morbi tristique senectus et. Adipiscing elit duis tristique
-          sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+        <Switch>
+          <Route path="/dashboard" component={AutoGrid} />
+          <Route path="/xyz" component={XYZ} />
+          <Redirect to="/" />
+        </Switch>
       </main>
     </div>
   );

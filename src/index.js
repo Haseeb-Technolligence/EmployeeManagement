@@ -4,11 +4,12 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import MiniDrawer from "./components/drawer";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <SimplePaper />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <MiniDrawer />
+  </BrowserRouter>,
   document.getElementById("root")
 );
 
