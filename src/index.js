@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import MiniDrawer from './components/drawer';
+import SimplePaper from './components/dashboard';
 
 ReactDOM.render(
   <React.StrictMode>
-    <MiniDrawer />
+    <SimplePaper />
   </React.StrictMode>,
   document.getElementById('root')
 );
