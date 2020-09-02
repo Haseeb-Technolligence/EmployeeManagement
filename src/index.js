@@ -7,7 +7,7 @@ import MiniDrawer from "./components/drawer";
 
 ReactDOM.render(
   <React.StrictMode>
-    <MiniDrawer />
+    <SimplePaper />
   </React.StrictMode>,
   document.getElementById("root")
 );
