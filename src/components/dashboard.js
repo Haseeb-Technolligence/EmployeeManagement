@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import TotalEmp from './totalEmployees';
 import Graph from './graph';
+import AlignItemsList from './activitylist';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,6 +61,8 @@ export default function AutoGrid() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <h1>Activity Log</h1>
+            <hr/>
+            <AlignItemsList />
           </Paper>
         </Grid>
       </Grid>
