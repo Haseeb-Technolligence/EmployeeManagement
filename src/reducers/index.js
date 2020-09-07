@@ -13,6 +13,7 @@ import { combineReducers } from "redux";
 
 export const allReducers = combineReducers({
   DrawerReducer,
+  xyz: demoReducer,
   EmployeeReducer,
   LeaveReducer,
   DepartmentReducer,
