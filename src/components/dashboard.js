@@ -48,7 +48,6 @@ export default function AutoGrid() {
           </Paper>
 
         </Grid>
-        <br />
       </Grid>
       <br/>
       <Grid container spacing={12}>

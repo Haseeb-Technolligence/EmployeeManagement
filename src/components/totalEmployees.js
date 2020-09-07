@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
@@ -12,6 +12,7 @@ import {
 } from '@material-ui/core';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import GroupAddOutlinedIcon from '@material-ui/icons/GroupAddOutlined';
+import {connect} from 'react-redux';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -24,9 +25,9 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const TotalEmp = ({ className, ...rest }) => {
+const TotalEmp = (props,{ className, ...rest}) => {
   const classes = useStyles();
-
+console.log(props);
   return (
     <Card
       className={clsx(classes.root, className)}
@@ -50,7 +51,7 @@ const TotalEmp = ({ className, ...rest }) => {
               color="textPrimary"
               variant="h3"
             >
-              14
+              {props.users}
             </Typography>
           </Grid>
           <Grid item>
@@ -68,4 +69,10 @@ TotalEmp.propTypes = {
   className: PropTypes.string
 };
 
-export default TotalEmp;
+function mapStateToProps(state){ 
+  return{
+    users: state.xyz
+  }
+}
+
+export default connect(mapStateToProps)(TotalEmp);
