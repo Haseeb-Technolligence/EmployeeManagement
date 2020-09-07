@@ -1,32 +1,26 @@
 import React from 'react';
 import MaterialTable from 'material-table';
 
-export default function employeesTable() {
+export default function MaterialTableDemo() {
   const [state, setState] = React.useState({
     columns: [
       { title: 'Name', field: 'name' },
-      { title: 'Surname', field: 'surname' },
-      { title: 'Birth Year', field: 'birthYear', type: 'numeric' },
-      {
-        title: 'Birth Place',
-        field: 'birthCity',
-        lookup: { 34: 'İstanbul', 63: 'Şanlıurfa' },
-      },
+      { title: 'Email', field: 'email' },
+      { title: 'Department', field: 'department'},
+      { title: 'Designation', field: 'designation'},
+      { title: 'Status', field: 'status'},
     ],
     data: [
-      { name: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63 },
-      {
-        name: 'Zerya Betül',
-        surname: 'Baran',
-        birthYear: 2017,
-        birthCity: 34,
-      },
+      { name: 'Mehmet', email: 'Baran', department: 'Accounts', designation: 'Deputy Director', status: 'Active' },
+      { name: 'Ali', email: 'Awan', department: 'Accounts', designation: 'Assistant Director', status: 'Active' },
+      { name: 'Kashif', email: 'Baran', department: 'Accounts', designation: 'Admin', status: 'Active' },
+      { name: 'Noman', email: 'Thann', department: 'Accounts', designation: 'SO Director', status: 'Active' },
     ],
   });
 
   return (
     <MaterialTable
-      title="Editable Example"
+      title="Manage Employees"
       columns={state.columns}
       data={state.data}
       editable={{

@@ -121,7 +121,9 @@ const DrawerList = (props) => {
             </NavLink>
           </ListItem>
           <ListItem button className={classes.nested}>
-            <ListItemText primary="Manage Employee" />
+          <NavLink to="/ManageEmployee" className={classes.navlink}>
+              <ListItemText primary="Manage Employee" />
+            </NavLink>
           </ListItem>
         </DrawerListItem>
         {/* department options */}
