@@ -3,8 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
 import InputLabel from "@material-ui/core/InputLabel";
-
+import Button from "@material-ui/core/Button";
 import Select from "@material-ui/core/Select";
+import Typography from "@material-ui/core/Typography";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -30,9 +31,12 @@ export default function EmployeeForm() {
     <div className={classes.root}>
       <form>
         <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <h2>Add Employee</h2>
+          <Grid item xs={12} container justify="center">
+            <Typography variant="h5" gutterBottom>
+              Add Employee
+            </Typography>
           </Grid>
+          {/* Personal Details */}
           <Grid item xs={12} md={6}>
             <FormCard title="Personal Details">
               <TextField
@@ -141,6 +145,7 @@ export default function EmployeeForm() {
             </FormCard>
           </Grid>
           <Grid item xs={12} md={6} container>
+            {/* Account Login */}
             <Grid item xs={12}>
               <FormCard title="Account Login">
                 <TextField
@@ -166,6 +171,7 @@ export default function EmployeeForm() {
               </FormCard>
             </Grid>
             <Grid item xs={12}>
+              {/* Company Details */}
               <FormCard title="Company Details">
                 <FormControl variant="outlined" className={classes.formControl}>
                   <InputLabel htmlFor="outlined-age-native-simple">
@@ -187,6 +193,16 @@ export default function EmployeeForm() {
                     <option value="developer">Software Developer</option>
                     <option value="tester">Software Tester</option>
                     <option value="marketer">Marketing</option>
+                  </Select>
+                </FormControl>
+                <FormControl variant="outlined" className={classes.formControl}>
+                  <InputLabel htmlFor="outlined-age-native-simple">
+                    Status
+                  </InputLabel>
+                  <Select native required label="Select Designation">
+                    <option aria-label="None" value="" />
+                    <option value="developer">Active</option>
+                    <option value="tester">Inactive</option>
                   </Select>
                 </FormControl>
                 <TextField
@@ -213,6 +229,108 @@ export default function EmployeeForm() {
               </FormCard>
             </Grid>
           </Grid>
+          {/* Documents Grid */}
+          <Grid item xs={12} md={6}>
+            <FormCard title="Documents">
+              <TextField
+                id="resume"
+                type="file"
+                size="small"
+                margin="normal"
+                required={true}
+                fullWidth={true}
+                variant="outlined"
+              />
+              <FormLabel component="legend">Select Resume *</FormLabel>
+              <TextField
+                id="offerLetter"
+                type="file"
+                size="small"
+                margin="normal"
+                required={true}
+                fullWidth={true}
+                variant="outlined"
+              />
+              <FormLabel component="legend">Select Offer Letter *</FormLabel>
+              <TextField
+                id="aggrement"
+                type="file"
+                size="small"
+                margin="normal"
+                required={true}
+                fullWidth={true}
+                variant="outlined"
+              />
+              <FormLabel component="legend">
+                Select Aggrement/Contract *
+              </FormLabel>
+            </FormCard>
+          </Grid>
+          {/* salary Details */}
+          <Grid item xs={12} md={6}>
+            <FormCard title="Salary & Bank Details">
+              <TextField
+                id="salary"
+                type="number"
+                size="small"
+                label="Basic Salary in Rupee"
+                margin="normal"
+                required={true}
+                fullWidth={true}
+                variant="outlined"
+              />
+              <TextField
+                id="accountHolder"
+                type="text"
+                size="small"
+                label="Account Holder Name"
+                margin="normal"
+                required={true}
+                fullWidth={true}
+                variant="outlined"
+              />
+              <TextField
+                id="accountNumber"
+                type="text"
+                size="small"
+                label="Account Number"
+                margin="normal"
+                required={true}
+                fullWidth={true}
+                variant="outlined"
+              />
+              <TextField
+                id="bankName"
+                type="text"
+                size="small"
+                label="Bank Name"
+                margin="normal"
+                required={true}
+                fullWidth={true}
+                variant="outlined"
+              />
+              <TextField
+                id="branchCode"
+                type="text"
+                size="small"
+                label="Branch Code"
+                margin="normal"
+                required={true}
+                fullWidth={true}
+                variant="outlined"
+              />
+            </FormCard>
+          </Grid>
+        </Grid>
+        <Grid container item xs={12} justify="center">
+          <Button
+            variant="contained"
+            color="primary"
+            style={{ marginTop: "30px" }}
+            size="large"
+          >
+            Submit
+          </Button>
         </Grid>
       </form>
     </div>

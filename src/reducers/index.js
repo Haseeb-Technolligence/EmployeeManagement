@@ -9,6 +9,7 @@ import {
   DailyReducer,
   PayRollReducer,
 } from "./drawerAllReducers";
+import { demoReducer } from "./empdata";
 import { combineReducers } from "redux";
 
 export const allReducers = combineReducers({
