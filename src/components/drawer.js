@@ -28,6 +28,8 @@ import {
   DrawerActionClose,
 } from "../actions/drawerAllActions";
 
+import  MaterialTableDemo from './manageEmployees';
+
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -147,6 +149,7 @@ function MiniDrawer(props) {
           <Route path="/dashboard" component={AutoGrid} />
           <Route path="/xyz" component={XYZ} />
           <Route path="/AddEmployee" component={EmployeeForm} />
+          <Route path="/ManageEmployee" component={MaterialTableDemo} />
           <Redirect to="/" />
         </Switch>
       </main>
